@@ -4,7 +4,7 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/solid";
 import logo from "../../assets/logo.png";
-
+import "./Navbar.css";
 export default function navbar() {
   return (
     <div className="flex flex-row py-0.5 px-5 items-center justify-between">
