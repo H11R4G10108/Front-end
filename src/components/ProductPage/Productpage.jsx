@@ -34,7 +34,7 @@ const ProductList = () => {
             <div class="product" key={index}>
               <Link>
                 <img src={product.image} alt="Product Image" />
-                <div class="product-content">
+                <div id="product-content">
                   <h3 className="font-bold">{product.name}</h3>
                   <p>{product.title}</p>
                   <p>${product.price}</p>

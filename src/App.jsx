@@ -1,16 +1,17 @@
-import { useState } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import Productpage from "./components/ProductPage/Productpage";
+import Home from "./components/Home/Home";
 import { ThemeProvider } from "@material-tailwind/react";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <ThemeProvider>
       <div className="App">
-        <Navbar />
-        <Productpage />
+        <Home />
       </div>
+      <Routes>
+        <Route exact path="/home" component={Home} />
+      </Routes>
     </ThemeProvider>
   );
 }
