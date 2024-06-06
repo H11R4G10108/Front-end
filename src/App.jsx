@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import Productpage from "./components/Productpage/Productpage";
+import Productpage from "./components/ProductPage/Productpage";
 import { ThemeProvider } from "@material-tailwind/react";
 
 function App() {
