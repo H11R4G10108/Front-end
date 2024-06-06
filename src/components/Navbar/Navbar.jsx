@@ -2,50 +2,61 @@ import {
   ShoppingCartIcon,
   UserIcon,
   MagnifyingGlassIcon,
-} from "@heroicons/react/24/solid";
+} from "@heroicons/react/24/outline";
 import logo from "../../assets/logo.png";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
+
 export default function navbar() {
   return (
-    <div className="flex flex-row py-0.5 px-5 items-center justify-between">
-      <a href="#">
+    <div className="flex flex-row px-5 items-center justify-between">
+      <Link href="#">
         <img src={logo} alt="american apparel" className="w-40" />
-      </a>
+      </Link>
       <div className="flex gap-20">
-        <a
-          href="/product"
+        <Link
+          href="#"
           className="group transition-all duration-300 ease-in-out"
         >
           <p className="bg-left-bottom bg-gradient-to-r from-blue-500 to-pink-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
             Home
           </p>
-        </a>
-        <a href="#" className="group transition-all duration-300 ease-in-out">
+        </Link>
+        <Link
+          href="#"
+          className="group transition-all duration-300 ease-in-out"
+        >
           <p className="bg-left-bottom bg-gradient-to-r from-blue-500 to-pink-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
             For Men
           </p>
-        </a>
-        <a href="#" className="group transition-all duration-300 ease-in-out">
+        </Link>
+        <Link
+          href="#"
+          className="group transition-all duration-300 ease-in-out"
+        >
           <p className="bg-left-bottom bg-gradient-to-r from-blue-500 to-pink-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
             For Women
           </p>
-        </a>
-        <a href="#" className="group transition-all duration-300 ease-in-out">
+        </Link>
+        <Link
+          href="#"
+          className="group transition-all duration-300 ease-in-out"
+        >
           <p className="bg-left-bottom bg-gradient-to-r from-blue-500 to-pink-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
             For Unisex Folks
           </p>
-        </a>
+        </Link>
       </div>
       <div className="flex gap-10">
         <a href="#">
           <MagnifyingGlassIcon className="h-6 w-6 text-black-0" href="#" />
         </a>
-        <a href="#">
+        <Link href="#">
           <ShoppingCartIcon className="h-6 w-6 text-black-0" href="#" />
-        </a>
-        <a href="#">
+        </Link>
+        <Link href="#">
           <UserIcon className="h-6 w-6 text-black-0" href="#" />
-        </a>
+        </Link>
       </div>
     </div>
   );

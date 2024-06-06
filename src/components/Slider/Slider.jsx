@@ -1,3 +1,0 @@
-function Slider(props) {
-  return <></>;
-}
