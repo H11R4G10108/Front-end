@@ -1,0 +1,40 @@
+{
+  "hash": "c6d8db8e",
+  "configHash": "ca3b13c3",
+  "lockfileHash": "5812169b",
+  "browserHash": "2233d7e7",
+  "optimized": {
+    "@heroicons/react/24/solid": {
+      "src": "../../node_modules/@heroicons/react/24/solid/esm/index.js",
+      "file": "@heroicons_react_24_solid.js",
+      "fileHash": "b6582ebc",
+      "needsInterop": false
+    },
+    "@material-tailwind/react": {
+      "src": "../../node_modules/@material-tailwind/react/index.js",
+      "file": "@material-tailwind_react.js",
+      "fileHash": "0d3a8751",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "dc1c61dd",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "bf4258d2",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-7QEGSWOZ": {
+      "file": "chunk-7QEGSWOZ.js"
+    },
+    "chunk-6EPYQA3G": {
+      "file": "chunk-6EPYQA3G.js"
+    }
+  }
+}
