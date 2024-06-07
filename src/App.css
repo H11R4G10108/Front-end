@@ -1,4 +1,7 @@
 #root {
   margin: 0 auto;
   font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }

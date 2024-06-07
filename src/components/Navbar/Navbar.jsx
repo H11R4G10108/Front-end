@@ -4,14 +4,12 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import logo from "../../assets/logo.png";
-import "./Navbar.css";
-import Productpage from "../../components/ProductPage/Productpage";
 import { Routes, Route, Link } from "react-router-dom";
 
 export default function navbar() {
   return (
     <div className="flex flex-row px-5 items-center justify-between">
-      <a href="/home">
+      <a href="/">
         <img src={logo} alt="american apparel" className="w-32" />
       </a>
       <div className="flex gap-20">

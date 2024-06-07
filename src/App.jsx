@@ -2,18 +2,15 @@ import "./App.css";
 import Home from "./components/Home/Home";
 import { ThemeProvider } from "@material-tailwind/react";
 import { Route, Routes } from "react-router-dom";
+import Productdetail from "./components/ProductPage/Productdetail";
 
-function App() {
+export default function App() {
   return (
     <ThemeProvider>
-      <div className="App">
-        <Home />
-      </div>
       <Routes>
-        <Route exact path="/home" component={Home} />
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<Productdetail />} />
       </Routes>
     </ThemeProvider>
   );
 }
-
-export default App;
