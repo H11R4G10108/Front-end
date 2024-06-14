@@ -1,35 +1,13 @@
-.product {
+#product-list {
   background-color: #fff;
   border: 1px solid #ddd;
   transition: transform 0.3s ease;
   flex: 0 1 calc(20% - 8px);
 }
 
-.product:hover {
-  transform: translateY(-5px);
-}
-
-.product img {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.product h2 {
-  font-size: 1.2em;
-  margin-bottom: 5px;
-}
-
-.product p {
-  margin-bottom: 10px;
-}
-
-.product button:hover {
-  background-color: #cc3300;
-}
-
-#product-content {
-  padding: 10px;
-  line-height: 1.2rem;
+#product-list button:hover {
+  color: #ffff;
+  border-color: #ffff;
 }
 
 @media screen and (max-width: 768px) {
