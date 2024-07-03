@@ -4,7 +4,7 @@ import "./Productpage.css";
 import landpage from "../../assets/landpage.jpg";
 import { Link } from "react-router-dom";
 import { Carousel } from "@material-tailwind/react";
-import { CartContext } from "../../Context/CartProvider";
+import { CartContext } from "../../context/CartProvider";
 
 const ProductList = () => {
   const { cartItems, addToCart } = useContext(CartContext);
@@ -26,13 +26,13 @@ const ProductList = () => {
   return (
     <div>
       <div className="pb-5">
-        {/* <Carousel>
-          <img
-            src={landpage}
-            alt="american apparel landpage"
-            className="h-full w-full object-cover"
-          />
-        </Carousel> */}
+        {/* <Carousel> */}
+        <img
+          src={landpage}
+          alt="american apparel landpage"
+          className="h-full w-full object-cover"
+        />
+        {/* </Carousel> */}
       </div>
       <div className="flex flex-row py-0.5 px-5 items-center justify-center gap-14 flex-wrap">
         {products &&

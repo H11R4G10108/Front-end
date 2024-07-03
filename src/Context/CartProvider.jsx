@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect } from "react";
-
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
@@ -47,6 +46,12 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const removeFromCartEntirely = (item) => {
+    setCartItems(
+      cartItems.filter((cartItem) => cartItem.productID !== item.productID)
+    );
+  };
+
   const clearCart = () => {
     setCartItems([]);
   };
@@ -81,6 +86,7 @@ export const CartProvider = ({ children }) => {
         clearCart,
         getCartTotal,
         getCartSize,
+        removeFromCartEntirely,
       }}
     >
       {children}
