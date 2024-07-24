@@ -25,7 +25,7 @@ export default function Register() {
         <div className="max-w-md mx-auto bg-white p-10 shadow shadow-slate-300 gap-15">
           <h1 className="text-4xl font-medium mb-5">Create an account</h1>
           <form onSubmit={submitHandler}>
-            <label>Username</label>
+            <label>Username*</label>
             <input
               className="w-full py-3 border-b-2 border-slate-200 px-3 focus:outline-none focus:border-slate-500 hover:shadow"
               name="username"
@@ -42,7 +42,7 @@ export default function Register() {
               Username should be 3-16 characters and shouldn't include any
               special character!
             </span>
-            <label>Email</label>
+            <label>Email*</label>
             <input
               className="w-full py-3 border-b-2 border-slate-200 px-3 focus:outline-none focus:border-slate-500 hover:shadow"
               name="email"
@@ -56,7 +56,7 @@ export default function Register() {
             <span className="text-xs p-1 text-red-700 hidden">
               It should be a valid email address!
             </span>
-            <label>Password</label>
+            <label>Password*</label>
             <input
               className="w-full py-3 border-b-2 border-slate-200 px-3 focus:outline-none focus:border-slate-500 hover:shadow"
               name="password1"
@@ -72,7 +72,7 @@ export default function Register() {
               Password should be 8-20 characters and include at least 1 letter,
               1 number and 1 special character!
             </span>
-            <label>Confirm password</label>
+            <label>Confirm password*</label>
             <input
               className="w-full py-3 border-b-2 border-slate-200 px-3 focus:outline-none focus:border-slate-500 hover:shadow"
               name="password2"

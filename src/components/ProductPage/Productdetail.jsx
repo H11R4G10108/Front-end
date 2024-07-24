@@ -7,7 +7,7 @@ import Footer from "../../components/Footer/Footer";
 import { CartContext } from "../../context/CartProvider";
 import "./Productdetail.css";
 
-const Productdetail = (cartProduct, setcartProduct) => {
+const Productdetail = () => {
   const { cartItems, addToCart } = useContext(CartContext);
   const [product, setProduct] = useState([]);
   const { id } = useParams();
@@ -26,24 +26,13 @@ const Productdetail = (cartProduct, setcartProduct) => {
   };
   useEffect(() => {
     const loadProduct = async () => {
-      // Till the data is fetch using API
-      // the Loading page will show.
       setLoading(true);
-
-      // Await make wait until that
-      // promise settles and return its result
       const response = await axios.get(
         "http://127.0.0.1:8000/api/product/" + id
       );
-
-      // After fetching data stored it in posts state.
       setProduct(response.data);
-
-      // Closed the loading page
       setLoading(false);
     };
-
-    // Call the function
     loadProduct();
   }, []);
 
@@ -51,12 +40,12 @@ const Productdetail = (cartProduct, setcartProduct) => {
     <div>
       <Navbar />
       <div className="flex items-center justify-center p-10">
-        <div className="flex ">
+        <div className="flex items-center justify-center gap-28 ">
           <img
             src={product.image}
             alt={product.name}
             loading="lazy"
-            className="flex-none relative w-6/12"
+            className="flex-none relative w-4/12"
           />
           <div className="p-6">
             <div className="flex flex-col gap-2">
@@ -105,6 +94,7 @@ const Productdetail = (cartProduct, setcartProduct) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

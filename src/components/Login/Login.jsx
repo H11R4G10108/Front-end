@@ -51,9 +51,9 @@ export default function Login() {
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <a href="#" className="font-medium text-indigo-400 text-sm">
+                {/* <a href="#" className="font-medium text-indigo-400 text-sm">
                   Forgot Password?
-                </a>
+                </a> */}
                 <div className="flex flex-row gap-1">
                   <p className="font-medium text-sm">Don't have an account?</p>
                   <a
@@ -64,12 +64,6 @@ export default function Login() {
                   </a>
                 </div>
               </div>
-              {/* {formError && (
-                <div className=" text-red-600 flex flex-row gap-3">
-                  <XCircleIcon className="h-6 w-6 text-red-700" />
-                  {errrorMsg}
-                </div>
-              )} */}
             </div>
             <button
               id="submit-btn"

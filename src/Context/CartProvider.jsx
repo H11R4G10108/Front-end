@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
+import Swal from "sweetalert2";
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(
@@ -21,8 +22,28 @@ export const CartProvider = ({ children }) => {
             : cartItem
         )
       );
+      Swal.fire({
+        title: "Item added to cart",
+        icon: "success",
+        toast: true,
+        timer: 1000,
+        position: "top-right",
+        timerProgressBar: true,
+        showCloseButton: true,
+        showConfirmButton: false,
+      });
     } else {
       setCartItems([...cartItems, { ...item, quantity: quantity_input }]);
+      Swal.fire({
+        title: "Item added to cart",
+        icon: "success",
+        toast: true,
+        timer: 1000,
+        position: "top-right",
+        timerProgressBar: true,
+        showCloseButton: true,
+        showConfirmButton: false,
+      });
     }
   };
 
@@ -56,13 +77,19 @@ export const CartProvider = ({ children }) => {
     setCartItems([]);
   };
 
-  const getCartTotal = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
+  const calculateCartTotal = (cartItems) => {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
-
+  
+  const getCartSubTotal = () => {
+    return calculateCartTotal(cartItems);
+  };
+  
+  const getCartTotal = () => {
+    const subTotal = calculateCartTotal(cartItems);
+    const additionalCharge = 5; // Example additional charge, like shipping fee
+    return subTotal + additionalCharge;
+  };
   const getCartSize = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
@@ -84,6 +111,7 @@ export const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         clearCart,
+        getCartSubTotal,
         getCartTotal,
         getCartSize,
         removeFromCartEntirely,
