@@ -1,8 +1,8 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Productpage from "../../components/ProductPage/Productpage";
 import Footer from "../../components/Footer/Footer";
-import React, { useState, useEffect } from "react";
-import { Carousel, Typography, Button } from "@material-tailwind/react";
+import React from "react";
+import { Carousel } from "@material-tailwind/react";
 import pic4 from "../../assets/pic4.png";
 import pic3 from "../../assets/pic3.png";
 import pic1 from "../../assets/pic1.png";
@@ -20,7 +20,7 @@ function Home() {
             className="h-1/2 w-full object-cover"
           />
           <div className="absolute inset-0 grid h-full w-full">
-            <div className="w-2/4 md:w-2/4 md:pl-20 lg:pl-20 mt-60">
+            <div className="w-2/4 md:w-2/4 md:pl-20 lg:pl-20 mt-60 ml-10">
               <div className="flex flex-col gap-2">
                 <h1 className="text-4xl text-white font-bold">ONLINE SHOPPING</h1> 
                 <a
@@ -40,7 +40,7 @@ function Home() {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 grid h-full w-full">
-            <div className="w-2/4 md:w-2/4 md:pl-20 lg:pl-20 mt-60">
+            <div className="w-2/4 md:w-2/4 md:pl-20 lg:pl-20 mt-60 ml-10">
               <div className="flex flex-col gap-2">
                 <h1 className="text-4xl text-white font-bold">ONLINE SHOPPING</h1> 
                 <a

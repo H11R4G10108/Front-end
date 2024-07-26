@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Login.css";
-import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function Login() {

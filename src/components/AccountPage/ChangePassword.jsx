@@ -1,26 +1,15 @@
-import { useState, useEffect, useContext } from "react";
+import { useState } from "react";
 import useAxios from "../../utils/useAxios";
-import { jwtDecode } from "jwt-decode";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "./Sidebar.jsx";
 import Swal from "sweetalert2";
 import "./ChangePassword.css";
-import axios from "axios";
-import { AuthContext } from "../../context/AuthContext.jsx";
 import { LockClosedIcon } from "@heroicons/react/24/outline";
 export default function ChangePassword() {
-  const { authTokens, setUser, setAuthTokens } = useContext(AuthContext);
-  const [res, setRes] = useState("");
   const api = useAxios();
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const [oldpassword, setOldPassword] = useState("");
-
-  const token = localStorage.getItem("authTokens");
-  if (token) {
-    const decode = jwtDecode(token);
-    var user_id = decode.user_id;
-  }
   const [focused, setFocused] = useState(false);
   const handleFocus = (e) => {
     setFocused(true);

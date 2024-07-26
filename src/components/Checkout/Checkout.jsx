@@ -122,6 +122,17 @@ function Checkout() {
       })
       .catch((error) => {
         console.log(error);
+        console.log("There was a server issue");
+          Swal.fire({
+            title: "There was a server issue",
+            icon: "error",
+            toast: true,
+            timer: 6000,
+            position: "bottom-right",
+            timerProgressBar: true,
+            showCloseButton: true,
+            showConfirmButton: false,
+          });
       });
   };
   console.log(order);
@@ -134,7 +145,7 @@ function Checkout() {
         </a>
       </div>
       <section className="bg-white py-8">
-        <form action="#" className="mx-auto max-w-screen-xl px-4 2xl:px-0">
+        <form className="mx-auto max-w-screen-xl px-4 2xl:px-0" onSubmit={submitHandler}>
           <div className="flex justify-center">
             <ol className="items-center flex w-full max-w-2xl text-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:text-base">
               <li className="after:border-1 items-center text-primary-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:text-primary-500 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10 flex gap-3">
@@ -180,7 +191,7 @@ function Checkout() {
                       name="customer_name"
                       className="block w-full  border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                       maxLength="256"
-                      required
+                      required="True"
                       onChange={inputHandler}
                       value={order.customer_name}
                     />
@@ -200,8 +211,8 @@ function Checkout() {
                       name="address"
                       onChange={inputHandler}
                       value={order.address}
-                      required
-                    >
+                      required="True"
+                      >
                       {address ? (
                         address.map((add, index) => (
                           <option value={add.addressID} key={index}>
@@ -321,7 +332,6 @@ function Checkout() {
                 <button
                   type="submit"
                   className="flex w-full items-center justify-center px-5 py-2 bg-black text-white hover:bg-white hover:text-black border border-black"
-                  onClick={submitHandler}
                 >
                   Place Order
                 </button>

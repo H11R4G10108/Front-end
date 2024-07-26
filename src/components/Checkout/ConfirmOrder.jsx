@@ -1,7 +1,5 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../context/CartProvider";
-import { jwtDecode } from "jwt-decode";
+import {useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { useParams } from "react-router-dom";
 import { PhoneIcon } from "@heroicons/react/24/outline";
@@ -9,7 +7,6 @@ function ConfirmOrder() {
   const [loading, setLoading] = useState(false);
   const [order, setOrder] = useState([]);
   const [orderDetail, setOrderDetail] = useState([]);
-  const [readMore, setReadMore] = useState(false);
 
   const { id } = useParams();
   useEffect(() => {

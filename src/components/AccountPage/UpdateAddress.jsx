@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "./Sidebar.jsx";
 import { useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
 import Swal from "sweetalert2";
 import axios from "axios";
 
