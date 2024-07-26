@@ -1,30 +1,25 @@
 import { useContext, useEffect, useState } from "react";
-import ProductService from "../../services/ProductService";
 import "./Productpage.css";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartProvider";
 import { SparklesIcon } from "@heroicons/react/24/outline";
+import axios from "axios";
 
 const ProductList = () => {
   const [loading, setLoading] = useState(false);
   const { cartItems, addToCart } = useContext(CartContext);
   const [products, setProduct] = useState([]);
   useEffect(() => {
-    retrieveProduct();
+    const loadProduct = async () => {
+      setLoading(true);
+      const response = await axios.get(
+        "http://127.0.0.1:8000/api/product/"
+      );
+      setProduct(response.data);
+      setLoading(false);
+    };
+    loadProduct();
   }, []);
-
-  const retrieveProduct = () => {
-    setLoading(true);
-    ProductService.getAll()
-      .then((response) => {
-        setProduct(response.data);
-        setLoading(false);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
-
   return (
     <div>
       {loading ? (

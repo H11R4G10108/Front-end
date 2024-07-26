@@ -12,7 +12,7 @@ function Home() {
     <div className="App">
       <Navbar />
       <div className="sm:h-44 md:h-1/2">
-      <Carousel className="" autoplay="true" loop="true">
+      <Carousel autoplay="true" loop="true">
         <div className="relative h-full w-full">
           <img
             src={pic1}

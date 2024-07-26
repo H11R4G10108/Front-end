@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar.jsx";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-
+import "./OrderList.css"
 function OrderList() {
   const [order, setOrder] = useState([]);
   useEffect(() => {
@@ -39,7 +39,7 @@ function OrderList() {
       <Navbar />
       <div className="flex flex-row gap-7">
         <Sidebar />
-        <div className="max-w-5xl mx-auto px-1 sm:px-2 lg:px-2 pt-4 ">
+        <div className="table-fixed w-full mx-auto px-1 sm:px-2 lg:px-2">
           {order.length > 0 ? (
             <div className="bg-white pt-8">
               <table className="table-auto">

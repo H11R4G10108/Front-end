@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar.jsx";
 import Swal from "sweetalert2";
 import "./ChangePassword.css";
 import axios from "axios";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext.jsx";
 import { LockClosedIcon } from "@heroicons/react/24/outline";
 export default function ChangePassword() {
   const { authTokens, setUser, setAuthTokens } = useContext(AuthContext);
