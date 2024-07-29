@@ -9,11 +9,9 @@ import { jwtDecode } from "jwt-decode";
 import Swal from "sweetalert2";
 
 function Checkout() {
-  const { cartItems, getCartTotal, getCartSubTotal, clearCart } =
-    useContext(CartContext);
+  const { cartItems, getCartTotal, getCartSubTotal, clearCart } = useContext(CartContext);
   const navigate = useNavigate();
   const [address, setAddress] = useState([]);
-  const [defaultAddress, setdefaultAddress] = useState([]);
   const token = localStorage.getItem("authTokens");
   if (token) {
     const decode = jwtDecode(token);
@@ -30,7 +28,7 @@ function Checkout() {
   }, []);
   const [order, setOrder] = useState({
     user: user_id,
-    address: address.length > 0 ? address[0].addressID : "",
+    address: "",
     customer_name: "",
     status: 1,
     subtotal: getCartSubTotal(),
@@ -136,7 +134,7 @@ function Checkout() {
       });
   };
   console.log(order);
-  console.log(cartItems);
+  console.log(address[0]);
   return (
     <div>
       <div className="flex justify-center">
@@ -213,14 +211,14 @@ function Checkout() {
                       value={order.address}
                       required="True"
                       >
-                      {address ? (
+                      {address.length > 0 ? (
                         address.map((add, index) => (
                           <option value={add.addressID} key={index}>
                             {add.name}, {add.tel}, {add.street}, {add.city}
                           </option>
                         ))
                       ) : (
-                        <option disabled>
+                        <option>
                           Add an address before proceed with checkout
                         </option>
                       )}
@@ -229,6 +227,7 @@ function Checkout() {
                   <div className="sm:col-span-2">
                     <a
                       href="/user/add-address"
+                      target="_blank"
                       className="flex w-full items-center justify-center gap-2  border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 "
                     >
                       <PlusIcon className="h-5 w-5 text-gray-0 cursor-pointer" />
@@ -331,7 +330,8 @@ function Checkout() {
               <div className="space-y-3">
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center px-5 py-2 bg-black text-white hover:bg-white hover:text-black border border-black"
+                  disabled={address.length === 0}
+                  className="flex w-full items-center justify-center px-5 py-2 bg-black text-white hover:bg-white hover:text-black border border-black disabled:cursor-not-allowed disabled:hover:bg-black disabled:hover:text-white" 
                 >
                   Place Order
                 </button>

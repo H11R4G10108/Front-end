@@ -5,11 +5,18 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import "./OrderList.css"
+import { jwtDecode } from "jwt-decode";
+
 function OrderList() {
   const [order, setOrder] = useState([]);
+  const token = localStorage.getItem("authTokens");
+  if (token) {
+    const decode = jwtDecode(token);
+    var user_id = decode.user_id;
+  }
   useEffect(() => {
     const loadOrder = async () => {
-      const response = await axios.get("http://127.0.0.1:8000/api/orderview/");
+      const response = await axios.get("http://127.0.0.1:8000/api/user/" + user_id + "/order");
       setOrder(response.data);
     };
     loadOrder();
@@ -17,7 +24,7 @@ function OrderList() {
   const cancelOrder = (orderID) => {
     const formData = new FormData();
     formData.append("orderID", orderID);
-    axios
+    axios 
       .post(
         "http://127.0.0.1:8000/api/" +
           "cancel-order/" +

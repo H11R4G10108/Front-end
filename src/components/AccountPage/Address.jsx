@@ -9,7 +9,6 @@ import Swal from "sweetalert2";
 
 function AddressPage() {
   const navigate = useNavigate();
-  const [showModal, setShowModal] = useState(false);
   const [address, setAddress] = useState([]);
   const [loading, setLoading] = useState(false);
   const token = localStorage.getItem("authTokens");

@@ -8,13 +8,19 @@ import {
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 function sidebar() {
   const { logoutUser } = useContext(AuthContext);
   const [order, setOrder] = useState([]);
+  const token = localStorage.getItem("authTokens");
+  if (token) {
+    const decode = jwtDecode(token);
+    var user_id = decode.user_id;
+  }
   useEffect(() => {
     const loadOrder = async () => {
-      const response = await axios.get("http://127.0.0.1:8000/api/orderview/");
+      const response = await axios.get("http://127.0.0.1:8000/api/user/" + user_id + "/order");
       setOrder(response.data);
     };
     loadOrder();
